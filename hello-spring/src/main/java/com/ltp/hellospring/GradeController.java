@@ -1,12 +1,15 @@
 package com.ltp.hellospring;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class GradeController {
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "Some html view";
+    @GetMapping("/grades")
+    public String getGrades(Model model) {
+        Grade grade = new Grade("Harry", "Physics", "B+");
+        model.addAttribute("grade", grade);
+        return "grades";
     }
 }
