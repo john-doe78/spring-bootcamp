@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class GradeController {
     @GetMapping("/grades")
     public String getGrades(Model model) {
-        Grade grade = new Grade("Harry", "Physics", "B+");
+        Grade grade = new Grade("Harry", "Physics", "C+");
         model.addAttribute("grade", grade);
         return "grades";
     }
